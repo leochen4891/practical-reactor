@@ -167,7 +167,7 @@ public class c4_LifecycleHooks extends LifecycleHooksBase {
                     .verifyComplete();
 
         StepVerifier.create(temperatureFlux.skip(20)
-                                           .concatWith(Flux.error(new RuntimeException("oops"))))
+                    .concatWith(Flux.error(new RuntimeException("oops"))))
                     .expectError()
                     .verify();
 
